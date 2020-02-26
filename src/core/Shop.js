@@ -130,9 +130,11 @@ const Shop = () => {
                     <h2 className="mb-4">Products</h2>
                     {/* {JSON.stringify(filteredResults)} */}
                     <div className="row">
-                        {filteredResults.map((product, i) => (
+                        {filteredResults.map((product, index) => (
 
-                            <Card key={i} product={product} />
+                            <div key={index} className="col-4 mb-3">
+                                <Card product={product} />
+                            </div>
                         ))}
                     </div>
                     <hr />
