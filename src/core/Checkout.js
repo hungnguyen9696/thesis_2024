@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from './Layout';
-import { getProducts, getBraintreeClientToken, processPayment } from './apiCore';
+import { getProducts, getBraintreeClientToken, processPayment, createOrder } from './apiCore';
 import { emptyCart } from './cartHelpers';
 import Card from './Card';
 import { isAuthenticated } from '../auth/index';
@@ -105,7 +105,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                     .then(response => {
                         console.log(response);
                         //response include transaction and success
-                        setData({ ...data, success: response.success });
+
                         // empty cart
                         // create order
 
@@ -116,13 +116,22 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                             address: deliveryAddress
                         };
 
-                        emptyCart(() => {
-                            setRun(!run); // run useEffect in parent Cart
-                            console.log('payment success and empty cart');
-                            setData({ loading: false });
-                        });
-
-
+                        createOrder(userId, token, createOrderData)
+                            .then(response => {
+                                emptyCart(() => {
+                                    setRun(!run); // run useEffect in parent Cart
+                                    console.log('payment success and empty cart');
+                                    console.log(response);
+                                    setData({
+                                        loading: false,
+                                        success: true
+                                    });
+                                });
+                            })
+                            .catch(error => {
+                                console.log(error);
+                                setData({ loading: false });
+                            })
                     })
                     .catch(error => {
                         console.log(error);
