@@ -59,26 +59,6 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
 
     let deliveryAddress = data.address;
 
-    // const buy = () => {
-    //     // code
-    //     createOrder(userId, token, createOrderData)
-    //         .then(response => {
-    //             emptyCart(() => {
-    //                 setRun(!run); // run useEffect in parent Cart
-    //                 console.log('payment success and empty cart');
-    //                 setData({
-    //                     loading: false,
-    //                     success: true
-    //                 });
-    //             });
-    //         })
-    //         .catch(error => {
-    //             console.log(error);
-    //             setData({ loading: false });
-    //         });
-    // }
-    // // code
-
     const buy = () => {
         setData({ loading: true });
         // send the nonce to server
