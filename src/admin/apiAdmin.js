@@ -89,3 +89,59 @@ export const updateOrderStatus = (userId, token, orderId, status) => {
         })
         .catch(err => console.log(err));
 };
+
+export const getProducts = () => {
+    return fetch(`${API}/products?limit=undefined`, {
+        method: 'GET'
+
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
+export const getSingleProduct = (productId) => {
+    return fetch(`${API}/product/${productId}`, {
+        method: 'GET'
+
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
+export const updateProduct = (productId, userId, token, updatedProduct) => {
+    return fetch(`${API}/product/${productId}/${userId}`, {
+        method: 'PUT',
+        headers: {
+            Accept: "application/json",
+
+            Authorization: `Bearer ${token}`
+        },
+        body: updatedProduct
+        //not json.stringify bcuz it has to be form data (image included)
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
+export const deleteProduct = (userId, token, productId) => {
+    return fetch(`${API}/product/${productId}/${userId}`, {
+        method: 'DELETE',
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        }
+
+
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
