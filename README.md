@@ -13,8 +13,6 @@ In the project directory, you can run:
 ```
 npm install
 ```
-
-Then install MongoDB by creating .env file with DATABASE variable
 ___
 ### Running
 
