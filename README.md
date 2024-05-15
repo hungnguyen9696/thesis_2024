@@ -4,6 +4,9 @@ Welcome to my self-developed project used for practicing and learning purpose.
 This is the front-end repository using [React.js](https://github.com/facebook/create-react-app)
 
 Check out the back-end repository using [Node.js](https://nodejs.org/en/) and [Express](http://expressjs.com/) here: [Ecommerce-back](https://github.com/hungnguyen9696/Ecommerce_Mern)
+
+After managing to get the app running in your local, you can create an user account then go to MongoDB Atlas and change the role of that user to 2 so it will be an admin account
+
 ___
 
 ### Dependencies
