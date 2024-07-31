@@ -117,3 +117,221 @@
      }
  }
  
+/* Basic styles for the navigation items */
+/* .nav-item {
+    position: relative;
+}
+
+/* Styles for the dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.dropdown-item {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu when the dropdown is open */
+.show {
+    display: block;
+}
+
+/* Styles for the dropdown toggle button */
+.dropdown-toggle {
+    border: none;
+    background: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.submenu {
+    z-index: 1000;
+} */
+
+
+/* Basic styles for the menu */
+.main-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .top-level-entry-container {
+    position: relative;
+  }
+  
+  .top-level-entry {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+  }
+  
+  .top-level-entry:hover,
+  .top-level-entry:focus {
+    background-color: #0056b3;
+  }
+  
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .submenu-item {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: black;
+  }
+  
+  .submenu-item:hover,
+  .submenu-item:focus {
+    background-color: #f1f1f1;
+  }
+  
+  /* Show the submenu when the dropdown is open */
+  .submenu.show {
+    display: block;
+  }
+  
+
+
+/* skip to content link */
+
+.skip-to-main-content-link {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: black;
+    color: white;
+    opacity: 0;
+  }
+  .skip-to-main-content-link:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+
+  .dialogs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.dialog-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog-backdrop .hidden {
+    display: none;
+}
+
+.dialog-backdrop > [role="dialog"] {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dialog_label {
+    margin: 0;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.dialog_form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dialog_form_item {
+    display: flex;
+    flex-direction: column;
+}
+
+.label_text {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.wide_input,
+.city_input,
+.state_input,
+.zip_input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dialog_form_actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.dialog_form_actions button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #cccccc;
+    border-radius: 4px;
+
+    color: white;
+    cursor: pointer;
+}
+
+.dialog_form_actions button:focus {
+    outline: blue;
+}
+
+/* Define styles for the focused state of the button */
+.button-focused:focus {
+    outline: 2px solid #4A90E2; /* Example: blue outline */
+    background-color: #e6f7ff; /* Example: light blue background */
+    border-radius: 4px; /* Example: rounded corners */
+    /* Add other styles as needed */
+}

@@ -26,17 +26,23 @@ const Checkbox = (props) => {
     return (
         <ul>
             {categories.map((cat, index) => (
-                <li key={index} className='list-unstyled' >
+                <li key={index} className="list-unstyled">
                     <input
                         onChange={handleToggle(cat._id)}
-                        // value={checked.indexOf(cat._id === -1)}
                         type="checkbox"
-                        className='form-check-input'
+                        className="form-check-input"
+                        id={`category-${index}`}
                     />
-                    <label className='form-check-label'> {cat.name}</label>
+                    <label 
+                        className="form-check-label" 
+                        htmlFor={`category-${index}`}
+                    > 
+                        {cat.name}
+                    </label>
                 </li>
             ))}
         </ul>
+
     )
 
 }

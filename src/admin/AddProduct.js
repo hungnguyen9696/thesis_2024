@@ -142,8 +142,9 @@ const AddProduct = () => {
                 </div>
 
                 <div className="form-group">
-                    <label className="text-muted">Category</label>
+                    <label for='category' className="text-muted">Category</label>
                     <select
+                        id='category'
                         onChange={handleChange('category')}
                         className="form-control">
                         <option>Please select</option>
@@ -155,8 +156,9 @@ const AddProduct = () => {
                 </div>
 
                 <div className="form-group">
-                    <label className="text-muted">Shipping</label>
+                    <label for='shipping' className="text-muted">Shipping</label>
                     <select
+                        id='shipping'
                         onChange={handleChange('shipping')}
                         className="form-control">
                         <option>Please select</option>

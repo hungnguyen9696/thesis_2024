@@ -131,15 +131,42 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
         <div onBlur={() => setData({ ...data, error: '' })}>
             {data.clientToken !== null && products.length > 0 ? (
                 <div>
-                    <div className="gorm-group mb-3">
-                        <label className="text-muted">Delivery address:</label>
+                    {/* {data.error && (
+                        <div
+                            id="error-message"
+                            className="alert alert-danger"
+                            role="alert"
+                            aria-live="assertive"
+                        >
+                            {data.error}
+                        </div>
+                    )}
+                    <div className="form-group mb-3">
+                        <label className="text-muted" htmlFor="delivery-address">Delivery address:</label>
                         <textarea
                             onChange={handleAddress}
                             className="form-control"
                             value={data.address}
                             placeholder="Type your delivery address here..."
+                            id="delivery-address"
+                            aria-invalid={!!data.error}
                         />
-                    </div>
+                    </div> */}
+
+                    <label className="text-muted">Delivery address:</label>
+                    <textarea
+                        onChange={handleAddress}
+                        className="form-control"
+                        value={data.address}
+                        placeholder="Type your delivery address here..."
+                        aria-describedby="addressError"
+                    />
+                    {data.error && (
+                        <div id="addressError" className="text-danger" role="alert">
+                            {data.error}
+                        </div>
+                    )}
+
 
                     <DropIn
                         options={{
@@ -159,7 +186,12 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
     );
 
     const showError = error => (
-        <div className="alert alert-danger" style={{ display: error ? '' : 'none' }}>
+        <div 
+            id="addressError" 
+            role="alert" 
+            className="alert alert-danger" 
+            style={{ display: error ? '' : 'none' }}
+        >
             {error}
         </div>
     );
@@ -177,7 +209,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
             <h2>Total: ${getTotal()}</h2>
             {showLoading(data.loading)}
             {showSuccess(data.success)}
-            {showError(data.error)}
+            {/* {showError(data.error)} */}
             {showCheckout()}
         </div>
     )

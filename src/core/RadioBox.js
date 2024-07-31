@@ -13,13 +13,14 @@ const RadioBox = (props) => {
         prices.map((pri, index) => (
             <div key={index}>
                 <input
+                    id={index}
                     onChange={handleChange}
                     value={pri._id}
-                    name={pri}
+                    name='price'
                     type="radio"
                     className='mr-2 ml-4'
                 />
-                <label className='form-check-label'> {pri.name}</label>
+                <label for={index} className='form-check-label'> {pri.name}</label>
             </div>
         ))
 
